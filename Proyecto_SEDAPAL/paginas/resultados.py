@@ -12,8 +12,7 @@ from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
 
 @st.cache_data
 def cargar_datos():
-    return pd.read_csv("datos/produccion_agua.csv")
-
+    return pd.read_csv("Proyecto_SEDAPAL/datos/produccion_agua.csv")
 
 def mostrar():
 

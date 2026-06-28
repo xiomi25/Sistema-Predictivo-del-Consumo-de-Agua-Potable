@@ -1,4 +1,5 @@
 import streamlit as st
+from pathlib import Path
 from paginas import inicio, datos, analisis, modelo, prediccion, resultados
 
 st.set_page_config(
@@ -58,6 +59,18 @@ hr {
 
 </style>
 """, unsafe_allow_html=True)
+
+# ---------------- LOGO DE SEDAPAL (CON RUTA ABSOLUTA PARA LA NUBE) ----------------
+# Busca de forma dinámica la carpeta raíz del proyecto (Proyecto_SEDAPAL)
+raiz_proyecto = Path(__file__).resolve().parent
+ruta_logo = raiz_proyecto / "assets" / "logo_sedapal.png"
+
+# Intenta cargar el logo en la parte superior de la barra lateral
+if ruta_logo.exists():
+    st.sidebar.image(str(ruta_logo), use_container_width=True)
+else:
+    # Si por algún motivo no la encuentra, te dejará un aviso oculto en logs para no dañar el diseño
+    pass
 
 # ---------------- MENÚ ----------------
 st.sidebar.title("SISTEMA SEDAPAL")

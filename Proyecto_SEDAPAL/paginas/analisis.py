@@ -99,20 +99,13 @@ def mostrar():
     ax.bar(prod.index.astype(str), prod.values)
 
     ax.set_ylabel("Volumen (m³)")
-
     ax.set_xlabel("Mes")
-
     ax.set_title("Producción Mensual")
 
     ax.yaxis.set_major_formatter(
         FuncFormatter(lambda x, pos: f'{x:,.0f}')
     )
 
-    plt.xticks(rotation=45)
-
-    st.pyplot(fig)
-    )
-    
     plt.xticks(rotation=45)
 
     st.pyplot(fig)

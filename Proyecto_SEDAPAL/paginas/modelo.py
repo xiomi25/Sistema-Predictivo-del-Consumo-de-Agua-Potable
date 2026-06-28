@@ -7,9 +7,11 @@ from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
 
-@st.cache_data
+@st.cache_data # Si estás usando el caché de streamlit
 def cargar():
-    return pd.read_csv("datos/produccion_agua.csv")
+    return pd.read_csv("Proyecto_SEDAPAL/datos/produccion_agua.csv")
+    # O también puedes usar la ruta relativa usando dos puntos si falla:
+    # return pd.read_csv("../datos/produccion_agua.csv")
 
 def mostrar():
 

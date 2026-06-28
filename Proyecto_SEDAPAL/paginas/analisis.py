@@ -9,10 +9,15 @@ def mostrar():
 
     st.title("Análisis Exploratorio de Datos")
 
-    ruta = Path("datos/produccion_agua.csv")
+    # ------------------ CORRECCIÓN DE RUTA ------------------
+    # Obtiene la ruta de la carpeta actual (paginas)
+    carpeta_actual = Path(__file__).resolve().parent
+    
+    # Sube un nivel a Proyecto_SEDAPAL y entra a la carpeta 'datos'
+    ruta = carpeta_actual.parent / "datos" / "produccion_agua.csv"
 
     if not ruta.exists():
-        st.error("No se encontró el archivo.")
+        st.error(f"No se encontró el archivo en la ruta esperada: {ruta}")
         return
 
     df = pd.read_csv(ruta)
@@ -52,7 +57,7 @@ def mostrar():
     st.divider()
 
     #---------------------------------------------------------
-    # Resumen (CORREGIDO)
+    # Resumen
     #---------------------------------------------------------
 
     st.subheader("Información del Dataset")
@@ -64,11 +69,9 @@ def mostrar():
     })
 
     info = pd.DataFrame({
-
         "Variable": df.columns,
         "Tipo de dato": tipo_dato.values,
         "Valores nulos": df.isnull().sum().values
-
     })
 
     st.dataframe(info, use_container_width=True)
@@ -89,7 +92,7 @@ def mostrar():
                                categories=orden,
                                ordered=True)
 
-    prod = df.groupby("MES")["VOLUMEN_M3"].sum()
+    prod = df.groupby("MES", observed=False)["VOLUMEN_M3"].sum()
 
     fig, ax = plt.subplots(figsize=(10,5))
 
@@ -105,6 +108,11 @@ def mostrar():
         FuncFormatter(lambda x, pos: f'{x:,.0f}')
     )
 
+    plt.xticks(rotation=45)
+
+    st.pyplot(fig)
+    )
+    
     plt.xticks(rotation=45)
 
     st.pyplot(fig)

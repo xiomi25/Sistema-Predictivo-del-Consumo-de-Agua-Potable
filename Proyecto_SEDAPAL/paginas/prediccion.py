@@ -5,7 +5,7 @@ from sklearn.linear_model import LinearRegression
 
 @st.cache_data
 def cargar():
-    return pd.read_csv("datos/produccion_agua.csv")
+    return pd.read_csv("Proyecto_SEDAPAL/datos/produccion_agua.csv")
 
 def mostrar():
 

@@ -1,0 +1,4 @@
+env/
+env_agua/
+env_nuevo/
+*__pycache__/

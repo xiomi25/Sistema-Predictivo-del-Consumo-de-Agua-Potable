@@ -34,7 +34,7 @@ def mostrar():
     """)
 
     # ── Dataset principal del modelo ──────────────────────────────────────────
-    st.subheader("Dataset principal — Anuario Estadístico 2013–2017")
+    st.subheader("Dataset principal — Anuario Estadístico 2005–2017")
     st.markdown("""
     Datos agregados por año extraídos del Anuario Estadístico de SEDAPAL.
     Este dataset es la fuente principal del modelo de regresión multivariable.

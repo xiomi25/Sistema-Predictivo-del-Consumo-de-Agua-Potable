@@ -34,7 +34,7 @@ def mostrar():
     st.divider()
     st.markdown("""
     ### Alcance del sistema
-    - Análisis exploratorio de variables operativas (2013–2017)
+    - Análisis exploratorio de variables operativas (2005–2017)
     - Matriz de correlación entre variables y ANF
     - Modelado predictivo con regresión lineal múltiple
     - Evaluación del modelo con métricas R², MAE y RMSE

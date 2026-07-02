@@ -14,7 +14,7 @@ def cargar_datos():
 def mostrar():
     st.title("Análisis Exploratorio de Datos")
     st.markdown("""
-    Exploración de las variables del **Anuario Estadístico SEDAPAL 2013–2017**
+    Exploración de las variables del **Anuario Estadístico SEDAPAL 2005–2017**
     utilizadas en el modelo de regresión multivariable.
     """)
 
@@ -30,13 +30,13 @@ def mostrar():
     st.divider()
 
     # ── Dataset ───────────────────────────────────────────────────────────────
-    st.subheader("Dataset — Anuario SEDAPAL 2013–2017")
+    st.subheader("Dataset — Anuario SEDAPAL 2005–2017")
     st.dataframe(df, use_container_width=True)
     st.caption("Fuente: Anuario Estadístico SEDAPAL 2017 — Gerencia de Desarrollo e Investigación.")
     st.divider()
 
     # ── Evolución ANF ─────────────────────────────────────────────────────────
-    st.subheader("Evolución del Agua No Facturada (2013–2017)")
+    st.subheader("Evolución del Agua No Facturada (2005–2017)")
     fig, ax = plt.subplots(figsize=(8, 4))
     ax.plot(df["anio"], df["agua_no_facturada_pct"], "o-",
             color="#d9534f", linewidth=2.5, markersize=8)

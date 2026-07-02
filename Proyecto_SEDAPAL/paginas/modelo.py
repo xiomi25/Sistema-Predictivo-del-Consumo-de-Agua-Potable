@@ -114,10 +114,3 @@ def mostrar():
         "Coeficiente positivo = la variable aumenta el ANF."
     )
     st.divider()
-
-    st.subheader("Datos del Anuario Estadístico SEDAPAL 2005–2017")
-    st.dataframe(df, use_container_width=True)
-    st.caption(
-        "Fuente: Anuarios Estadísticos SEDAPAL 2005–2017 — "
-        "Gerencia de Desarrollo e Investigación."
-    )
